@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
     <title>Log4 | A confiança que você espera, na velocidade que você precisa!</title>
 </head>
 
@@ -13,79 +16,104 @@
 
     <header>
         <figure>
-            <img src="assets/logo.avif" alt="Imagem não encontrada">
+            <a href="/"><img src="assets/logo-sem-slogan-sem-fundo.png" alt="Imagem não encontrada"></a>
         </figure>
         <nav>
             <ul>
-                <li>Rastreamento</li>
-                <li>Quem Somos</li>
-                <li>Nossos serviços</li>
-                <li>Contato</li>
+                <li><a href="#rastreamento">Rastreamento</a></li>
+                <li><a href="#quem-somos">Quem Somos</a></li>
+                <li><a href="#nossos-servicos">Nossos serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section>
+        <section id="rastreamento">
             <article>
-                <h2>Rastreamento</h2>
+                <h2 class="titulo">Rastreamento</h2>
                 <p>Rastreie aqui a sua encomenda!</p>
-                <button>Rastrear</button>
+                <a href="https://rastreamento.correios.com.br/app/index.php"
+                    target="_blank"><button>Rastrear</button></a>
             </article>
 
             <figure>
-                <img src="assets/rastreamento.jpg" alt="">
+                <img src="assets/rastreamento-sem-fundo.png" alt="">
             </figure>
         </section>
 
-        <section>
+        <section id="quem-somos">
             <figure>
                 <img src="assets/quem-somos.jpg" alt="">
             </figure>
 
             <article>
-                <h2>A Log4</h2>
-                <p>Fundada em 2019, a Log4 é uma empresa da Móveis4, varejista líder do mercado de móveis, cama, mesa e banho.</p>
-                <p>Após identificar a necessidade do público de receber suas mercadorias com agilidade e cuidado, A Log4 foi criada para sanar essa carência.</p>
-                <p>Além de produtos de grande porte, a Log4 também atua em pequenas encomendas, realizando a distribuição rápida de itens de pequeno porte através de ciclistas e motoboys, tornando a entrega mais ágil e descomplicada.</p>
-                <h3>Log4</h3>
-                <h4>A confiança que você espera, na velocidade que você precisa!</h4>
+                <h2 class="titulo">A Log4</h2>
+                <p>Fundada em 2019, a Log4 é uma empresa da Móveis4, varejista líder do mercado de móveis, cama, mesa e
+                    banho.
+                    Após identificar a necessidade do público de receber suas mercadorias com agilidade e cuidado, A
+                    Log4 foi criada para sanar essa carência.
+                    Além de produtos de grande porte, a Log4 também atua em pequenas encomendas, realizando a
+                    distribuição rápida de itens de pequeno porte através de ciclistas e motoboys, tornando a entrega
+                    mais ágil e descomplicada.</p>
+                <div id="slogan">
+                    <img src="assets/logo-horizontal.avif" alt="slogan">
+                    <p>A confiança que você espera <br>
+                        na velocidade que você precisa!</p>
+                </div>
             </article>
         </section>
 
-        <section>
-            <h2>Nossos Serviços</h2>
+        <section id="nossos-servicos">
+            <h2 class="titulo">Nossos Serviços</h2>
             <div>
-                <article>
-                    <p>Distribuição rápida de itens de pequeno porte através de ciclistas e motoboys, tornando a entrega mais ágil e descomplicada</p>
+                <article id="entregas-ageis">
+                    <p>Distribuição rápida de itens de pequeno porte através de ciclistas e motoboys, tornando a entrega
+                        mais ágil e descomplicada</p>
                     <figure>
-                        <img src="assets/entregas-ageis.png" alt="">
+                        <img src="assets/entregas-ageis.png" alt="" class="imagens-nossos-serviços">
                     </figure>
                 </article>
-                <article>
+                <article id="entregas-com-cuidado">
                     <figure>
-                        <img src="assets/entregas-com-cuidado.png" alt="">
+                        <img src="assets/entregas-com-cuidado.png" alt="" class="imagens-nossos-serviços">
                     </figure>
-                    <p>Distribuição de móveis e demais itens de grande porte com rapidez e cuidado, zelando pelo seu produto.</p>
+                    <p>Distribuição de móveis e demais itens de grande porte com rapidez e cuidado, zelando pelo seu
+                        produto.</p>
                 </article>
             </div>
         </section>
-        
-        <section>
-            <h2>Contato</h2>
-            <p>Entre em contato conosco. Ajudaremos a encontrar os produtos e preços certos para o seu negócio.</p>
+
+        <section id="contato">
+            <h2 class="titulo">Contato</h2>
+            <p>Entre em contato conosco. Ajudaremos a encontrar os produtos certos para o seu negócio.</p>
             <form action="#">
-                <label for="nome">Nome Completo:</label>
-                <input type="text" name="nome" id="nome">
-                <label for="email">Email:</label>
-                <input type="email" name="email" id="email">
-                <label for="telefone">Telefone:</label>
-                <input type="tel" name="telefone" id="telefone">
-                <label for="assunto">Assunto:</label>
-                <input type="text" name="assunto" id="assunto">
-                <label for="mensagem">Mensagem:</label>
-                <input type="text" name="mensagem" id="mensagem">
-                <button type="submit">Enviar</button>
+                <fieldset>
+                    <legend>Fale conosco</legend>
+                    <div class="formLabelInput">
+                        <input type="text" name="nome" id="nome" class="inputsFormulario" required>
+                        <label for="nome">Nome Completo:</label>
+                    </div>
+                    <div class="formLabelInput">
+                        <input type="text" name="email" id="email" class="inputsFormulario" required>
+                        <label for="email">Email:</label>
+                    </div>
+                    <div class="formLabelInput">
+                        <input type="tel" name="telefone" id="telefone" class="inputsFormulario" required>
+                        <label for="telefone">Telefone:</label>
+                    </div>
+                    <div class="formLabelInput">
+                        <input type="text" name="assunto" id="assunto" class="inputsFormulario" required>
+                        <label for="assunto">Assunto:</label>
+                    </div>
+                    <div class="formLabelInput">
+                        <textarea name="mensagem" id="mensagem" cols="30" rows="5" class="inputsFormulario" required></textarea>
+                        <label for="mensagem">Mensagem:</label>
+                    </div>
+                    <div id="botaoFormulario">
+                        <input type="submit" value="Enviar">
+                    </div>
+                </fieldset>
             </form>
         </section>
     </main>
@@ -93,11 +121,8 @@
     <footer>
         <section>
             <h3>Endereço</h3>
-            <p>
-                Rua dos Bobos, nº 0, Centro
-                <br>
-                Uberaba/MG - 11233-456
-            </p>
+            <p>Rua dos Bobos, nº 0, Centro</p>
+            <p>Uberaba/MG - 11233-456</p>
         </section>
         <section>
             <h3>Ouvidoria</h3>
@@ -107,10 +132,10 @@
         </section>
         <section>
             <figure>
-                <img src="assets/instagram.png" alt="Image not found">
+                <a href="https://www.instagram.com/wylchayer/" target="_blank"><img src="assets/instagram.png" alt="Image not found"></a>
             </figure>
             <figure>
-                <img src="assets/facebook.png" alt="Image not found">
+                <a href="https://www.linkedin.com/in/wylchayer-cruz/" target="_blank"><img src="assets/facebook.png" alt="Image not found"></a>
             </figure>
         </section>
     </footer>
