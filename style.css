@@ -1,3 +1,28 @@
+/* 
+Paleta de cores:
+white
+#cd969e
+#cc5f6c
+#c23a49
+#000000
+*/
+
+/* 
+DÚVIDAS: 
+- diminuir header após abaixar a página (ao clicar em um item do header, o título fica por baixo do header fixo)
+- Zoom na página bagunça tudo
+- Scroll suave no js
+*/
+
+/*
+DIMENSÕES:
+*** 320px — 480px: dispositivos móveis
+*** 481px — 768px: iPads, tablets
+*** 769px — 1024px: telas pequenas, laptops
+1025px — 1200px: desktops, telas grandes
+1201px e acima —  telas muito grandes, TVs
+*/
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,15 +32,24 @@
 }
 
 .titulo {
-    font-size: 5rem;
+    font-size: 3.5rem;
 }
 
 body {
     background-image: linear-gradient(to right, #c23a49, #cd969e, #c23a49);
 }
 
+main {
+    padding: 0 3%;
+}
 
-        /* HEADER */
+main > section {
+    margin: 30px 0;
+}
+
+
+
+/* HEADER */
 header {
     align-items: center;
     background-image: linear-gradient(to right, #c23a49, #cd969e, #c23a49);
@@ -23,14 +57,16 @@ header {
     font-size: 1.3rem;
     font-weight: bold;
     height: 80px;
-    /* position: sticky; */
+    position: sticky;
     text-shadow: 0 0 10px #c23a49;
     top: 0;
+    z-index: 1;
 }
 
 header a {
     color: white;
     text-decoration: none;
+    transition: all 0.2s;
 }
 
 header > figure {
@@ -62,17 +98,21 @@ header > nav {
     justify-items: center;
 }
 
+#btn-mobile {
+    display: none;
+}
+
 header ul {
     align-items: center;
     display: grid;
     grid-template: 1fr / repeat(4, 1fr);
     height: 100%;
-    justify-items:center;
     width: 100%;
 }
 
 header li {
     list-style-type: none;
+    text-align: center;
 }
 
 header > nav a:hover {
@@ -88,17 +128,15 @@ header > nav a:hover {
 
 #rastreamento {
     color: white;
-    display: flex;
-    height: 60vh;
+    display: grid;
+    grid-template: 1fr / 50% 50%;
     text-shadow: 0 0 10px #c23a49;
 }
 
 #rastreamento > article {
     display: flex;
     flex-direction: column;
-    flex-grow: 5;
     justify-content: space-around;
-    padding-left: 5%;
 }
 
 #rastreamento > article > h2 {
@@ -106,14 +144,12 @@ header > nav a:hover {
 }
 
 #rastreamento > article > p {
-    padding-left: 5%;
     padding-bottom: 3%;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 #rastreamento > article > a {
     align-self: center;
-    padding-left: 10%;
 }
 
 #rastreamento > article button {
@@ -124,25 +160,25 @@ header > nav a:hover {
     font-size: 1.5rem;
     font-weight: bold;
     height: 60px;
+    transition: all 0.5s;
     width: 120px;
 }
 
 #rastreamento > article button:hover {
     background-color: #cc5f6c;
+    border: 1px solid white;
     color: white;
     cursor: pointer;
 }
 
 #rastreamento > figure {
-    flex-grow: 1;
-    height: 100%;
     display: flex;
     justify-content: center;
 }
 
 #rastreamento img {
-    height: 100%;
-    width: auto;
+    height: auto;
+    width: 70%;
 }
 
 
@@ -151,17 +187,15 @@ header > nav a:hover {
 
 #quem-somos {
     color: white;
-    display: flex;
+    display: grid;
     font-weight: bold;
-    height: 80vh;
+    grid-template-columns: 1fr 1fr;
     text-shadow: 0 0 10px #c23a49;
 }
 
 #quem-somos > figure {
     align-items: center;
     display: flex;
-    flex-basis: 50vw;
-    height: 100%;
     justify-content: center;
 }
 
@@ -169,12 +203,10 @@ header > nav a:hover {
     border-radius: 20px;
     height: 85%;
     max-width: 80%;
-    width: auto;
 }
 
 #quem-somos > article {
     display: flex;
-    flex-basis: 50vw;
     flex-direction: column;
     height: 100%;
     justify-content: center;
@@ -204,6 +236,7 @@ header > nav a:hover {
     display: flex;
     flex-grow: 1;
     justify-content: center;
+    margin-top: 30px;
 }
 
 #slogan > img {
@@ -212,8 +245,7 @@ header > nav a:hover {
 }
 
 #slogan > p {
-    font-size: 1.4rem;
-    font-weight: bold;
+    font-size: 1.1rem;
     padding-left: 3%;
     text-align: center;
 }
@@ -224,9 +256,8 @@ header > nav a:hover {
 
 #nossos-servicos {
     color: white;
-    display: flex;
-    flex-direction: column;
-    height: 70vh;
+    display: grid;
+    gap: 20px;
     text-shadow: 0 0 10px #c23a49;
 }
 
@@ -236,38 +267,38 @@ header > nav a:hover {
 
 #nossos-servicos > div {
     display: grid;
-    flex-grow: 1;
     grid-template: 1fr / 1fr 1fr;
 }
 
 #entregas-ageis {
     align-items: center;
     display: grid;
-    grid-template: 1fr / 1fr 200px;
+    grid-template: 1fr / 70% 30%;
     justify-items: center;
 }
 
 #entregas-ageis > p {
-    font-size: 1.5rem;
-    padding: 0 20px 0 10%;
+    font-size: 1.3rem;
+    padding-right: 10px;
     text-align: justify;
 }
 
 .imagens-nossos-serviços {
     border-radius: 20px;
-    width: 180px;
+    width: 100%;
+    padding: 0 10px;
 }
 
 #entregas-com-cuidado {
     align-items: center;
     display: grid;
-    grid-template: 1fr / 200px 1fr;
+    grid-template: 1fr / 30% 70%;
     justify-items: center;
 }
 
 #entregas-com-cuidado > p {
-    font-size: 1.5rem;
-    padding: 0 10% 0 20px;
+    font-size: 1.3rem;
+    padding-left: 10px;
     text-align: justify;
 }
 
@@ -299,7 +330,6 @@ header > nav a:hover {
 #contato > form > fieldset {
     border: 3px solid #c23a49;
     border-radius: 10px;
-    margin-bottom: 20px;
     padding: 1%;
     width: 500px;
 }
@@ -354,7 +384,8 @@ header > nav a:hover {
 #botaoFormulario {
     display: grid;
     justify-items: center;
-    transform: translateY(-10px);
+    margin-top: -10px;
+    margin-bottom: 10px;
 }
 
 form input[type=submit] {
@@ -365,6 +396,7 @@ form input[type=submit] {
     font-size: 1.1rem;
     font-weight: bold;
     padding: 10px 30px;
+    transition: all 0.5s;
 }
 
 form input[type=submit]:hover {
@@ -378,7 +410,6 @@ form input[type=submit]:hover {
             /* FOOTER */
 
 footer {
-    /* align-items: center; */
     background-color: #c23a49;
     color: white;
     display: grid;
@@ -392,8 +423,7 @@ footer section {
     align-items: center;
     display: grid;
     grid-template: 1fr / 1fr;
-    height: 100%;
-    justify-items: center;
+    text-align: center;
     width: 100%;
 }
 
@@ -405,4 +435,337 @@ footer figure {
 
 footer img {
     width: 40px;
+}
+
+@media screen and (max-width: 480px) {
+    .titulo {
+        font-size: 2rem;
+    }
+    
+    main {
+        padding: 0 3%;
+    }
+
+    main > section {
+        margin: 20px 0;
+    }
+
+
+    
+            /* HEADER */
+
+    header ul {
+        display: none;
+    }
+
+    header > nav {
+        justify-items: flex-end;
+        padding-right: 5%;
+    }
+
+    #btn-mobile {
+        display: block;
+    }
+
+
+            
+            /* RASTREAMENTO */
+    
+    #rastreamento {
+        background-image: url('assets/rastreamento-sem-fundo.png');
+        background-position: center;
+        background-size: cover;
+        display: grid;
+        grid-template: 1fr / 1fr;
+        height: 40vh;
+    }
+
+    #rastreamento > article {
+        align-items: center;
+    }
+
+    #rastreamento > article > h2 {
+        align-self: initial;
+    }
+
+    #rastreamento > article > p {
+        /* align-self: flex-start; */
+        font-size: initial;
+        width: 50%;
+    }
+
+    #rastreamento > article button {
+        font-size: initial;
+        height: 40px;
+        width: 80px;
+    }
+    
+    #rastreamento > figure {
+        display: none;
+    }
+    
+            /* QUEM SOMOS */
+
+    #quem-somos {
+        background-image: url('assets/quem-somos.jpg');
+        background-size: cover;
+        display: grid;
+        grid-template: 1fr / 1fr;
+        font-weight: initial;
+        padding: 3% 2%;
+    }
+
+    #quem-somos > figure {
+        display: none;
+    }
+
+    #quem-somos > article > h2 {
+        padding-right: 0;
+    }
+    
+    #quem-somos > article > p {
+        padding-right: 0;
+    }
+
+    #slogan {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #slogan > p {
+        font-size: initial;
+    }
+
+
+
+            /* NOSSOS SERVIÇOS */
+
+    #nossos-servicos > div {
+        display: grid;
+        grid-template: 1fr 1fr / 1fr;
+    }
+
+            /* CONTATO */
+            
+    #contato {
+        /* display: ; */
+    }
+
+    #contato > p {
+        font-size: initial;
+    }
+
+    #contato > form > fieldset {
+        border: 3px solid #c23a49;
+        padding: 0 10px;
+        width: 100%;
+    }
+
+     
+    
+            /* FOOTER */
+
+    footer {
+        grid-template: 1fr 1fr 50px / 1fr;
+        gap: 20px;
+        padding: 0;
+    }
+
+    #redes-sociais {
+        align-items: initial;
+        gap: 20px;
+        grid-template: 1fr / 1fr 1fr;
+    }
+    
+    #redes-sociais figure {
+        justify-self: initial;
+        padding: 0;
+    }
+
+    #instagram {
+        justify-items: end;
+    }
+
+    #facebook {
+        justify-items: start;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .titulo {
+        font-size: 2rem;
+    }
+    
+    main {
+        padding: 0 3%;
+    }
+
+    main > section {
+        margin: 20px 0;
+    }
+
+
+    
+            /* HEADER */
+
+    header ul {
+        display: none;
+    }
+
+    header > nav {
+        justify-items: flex-end;
+        padding-right: 5%;
+    }
+
+    #btn-mobile {
+        display: block;
+    }
+
+
+    
+            /* RASTREAMENTO */
+    
+    #rastreamento {
+        background-image: url('assets/rastreamento-sem-fundo.png');
+        background-position: center;
+        background-size: cover;
+        display: grid;
+        grid-template: 1fr / 1fr;
+        height: 40vh;
+    }
+
+    #rastreamento > article {
+        align-items: center;
+    }
+
+    #rastreamento > article > h2 {
+        align-self: initial;
+    }
+
+    #rastreamento > article > p {
+        font-size: initial;
+        text-align: center;
+        width: 50%;
+    }
+
+    #rastreamento > article button {
+        font-size: initial;
+        height: 40px;
+        width: 80px;
+    }
+    
+    #rastreamento > figure {
+        display: none;
+    }
+    
+            /* QUEM SOMOS */
+
+    #quem-somos {
+        background-image: url('assets/quem-somos.jpg');
+        background-size: cover;
+        display: grid;
+        grid-template: 1fr / 1fr;
+        font-weight: initial;
+        padding: 3% 2%;
+    }
+
+    #quem-somos > figure {
+        display: none;
+    }
+
+    #quem-somos > article > h2 {
+        padding-right: 0;
+    }
+    
+    #quem-somos > article > p {
+        padding-right: 0;
+    }
+
+    #slogan {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #slogan > p {
+        font-size: initial;
+    }
+
+
+
+            /* NOSSOS SERVIÇOS */
+
+    #nossos-servicos > div {
+        display: grid;
+        grid-template: 1fr 1fr / 1fr;
+    }
+
+            /* CONTATO */
+            
+    #contato {
+        /* display: ; */
+    }
+
+    #contato > p {
+        font-size: initial;
+    }
+
+    #contato > form > fieldset {
+        border: 3px solid #c23a49;
+        padding: 0 10px;
+        width: 100%;
+        max-width: 500px;
+    }
+
+     
+    
+            /* FOOTER */
+
+    footer {
+        grid-template: 1fr 1fr 50px / 1fr;
+        gap: 20px;
+        padding: 0;
+    }
+
+    #redes-sociais {
+        align-items: initial;
+        gap: 20px;
+        grid-template: 1fr / 1fr 1fr;
+    }
+    
+    #redes-sociais figure {
+        justify-self: initial;
+        padding: 0;
+    }
+
+    #instagram {
+        justify-items: end;
+    }
+
+    #facebook {
+        justify-items: start;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+
+    #rastreamento > article > p {
+        font-size: 1.3rem;
+    }
+
+    #entregas-ageis {
+        grid-template: 1fr / 60% 40%;
+    }
+
+    #entregas-ageis > p {
+        font-size: initial
+    }
+
+    #entregas-com-cuidado {
+        grid-template: 1fr / 40% 60%;
+    }
+
+    #entregas-com-cuidado > p {
+        font-size: initial
+    }
 }
