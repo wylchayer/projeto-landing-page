@@ -12,6 +12,8 @@ DÚVIDAS:
 - diminuir header após abaixar a página (ao clicar em um item do header, o título fica por baixo do header fixo)
 - Zoom na página bagunça tudo
 - Scroll suave no js
+- transição das imagens do ícone do menu
+- menu com touch continua com hover após clicar
 */
 
 /*
@@ -21,6 +23,16 @@ DIMENSÕES:
 *** 769px — 1024px: telas pequenas, laptops
 1025px — 1200px: desktops, telas grandes
 1201px e acima —  telas muito grandes, TVs
+*/
+
+/*
+NOMEAÇÃO COMEÇOU AQUI
+AQUI
+AQUI
+AQUI
+AQUI
+AQUI
+AQUI
 */
 
 * {
@@ -50,6 +62,7 @@ main > section {
 
 
 /* HEADER */
+
 header {
     align-items: center;
     background-image: linear-gradient(to right, #c23a49, #cd969e, #c23a49);
@@ -69,7 +82,7 @@ header a {
     transition: all 0.2s;
 }
 
-header > figure {
+#logoMenu {
     align-items: center;
     border-radius: 5px;
     display: flex;
@@ -79,7 +92,7 @@ header > figure {
     width: 100px;
 }
 
-header > figure > a {
+#logoMenu > a {
     align-items: center;
     display: flex;
     width: 70%;
@@ -90,7 +103,7 @@ header img {
 }
 
 
-header > nav {
+#navMenu {
     align-items: center;
     display: grid;
     flex-grow: 1;
@@ -102,7 +115,7 @@ header > nav {
     display: none;
 }
 
-header ul {
+#menu {
     align-items: center;
     display: grid;
     grid-template: 1fr / repeat(4, 1fr);
@@ -110,12 +123,12 @@ header ul {
     width: 100%;
 }
 
-header li {
+#menu li {
     list-style-type: none;
     text-align: center;
 }
 
-header > nav a:hover {
+#navMenu a:hover {
     color: #c23a49;
     text-shadow: 0 0 10px white;
     font-size: 1.5rem;
@@ -124,7 +137,7 @@ header > nav a:hover {
 
 
 
-            /* RASTREAMENTO */
+/* RASTREAMENTO */
 
 #rastreamento {
     color: white;
@@ -183,7 +196,7 @@ header > nav a:hover {
 
 
 
-            /* QUEM SOMOS */
+/* QUEM SOMOS */
 
 #quem-somos {
     color: white;
@@ -252,7 +265,7 @@ header > nav a:hover {
 
 
 
-            /* NOSSOS SERVIÇOS */
+/* NOSSOS SERVIÇOS */
 
 #nossos-servicos {
     color: white;
@@ -304,7 +317,7 @@ header > nav a:hover {
 
 
 
-            /* CONTATO */
+/* CONTATO */
 
 #contato {
     color: white;
@@ -407,7 +420,7 @@ form input[type=submit]:hover {
 
 
 
-            /* FOOTER */
+/* FOOTER */
 
 footer {
     background-color: #c23a49;
@@ -452,24 +465,77 @@ footer img {
 
 
     
-            /* HEADER */
+    /* HEADER */
 
-    header ul {
-        display: none;
-    }
-
-    header > nav {
+            
+    #navMenu {
         justify-items: flex-end;
         padding-right: 5%;
     }
+    
+    #navMenu.active #menu {
+        height: calc(100vh - 80px);
+        overflow-y: auto;
+        visibility: visible;
+    }
 
+    #menu {
+        background-color: #c23a49;
+        display: grid;
+        grid-template: repeat(4, 5rem) / 1fr;
+        height: 0px;
+        overflow-y: hidden;
+        position: absolute;
+        right: 0px;
+        top: 80px;
+        transition: .5s;
+        visibility: hidden;
+        width: 100%;
+        z-index: 100;
+    }
+    
+    #menu li {
+        align-items: center;
+        border-bottom: 2px solid #cd969e;
+        display: grid;
+        height: 100%;
+        text-align: left;
+        width: 100%;
+    }
+
+    #menu a {
+        padding: 1.4rem;
+        text-align: center;
+    }
+        
     #btn-mobile {
+        align-items: center;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        font-size: 1.2rem;
+        font-weight: bold;
+        transition: 1s;
+        width: 40px;
+    }
+
+    #navMenu.active #menuFechar {
         display: block;
+    }
+
+    #navMenu.active #menuHamburger {
+        display: none;
+    }
+
+    #menuFechar {
+        display: none;
     }
 
 
             
-            /* RASTREAMENTO */
+    /* RASTREAMENTO */
     
     #rastreamento {
         background-image: url('assets/rastreamento-sem-fundo.png');
@@ -504,7 +570,7 @@ footer img {
         display: none;
     }
     
-            /* QUEM SOMOS */
+    /* QUEM SOMOS */
 
     #quem-somos {
         background-image: url('assets/quem-somos.jpg');
@@ -538,14 +604,14 @@ footer img {
 
 
 
-            /* NOSSOS SERVIÇOS */
+    /* NOSSOS SERVIÇOS */
 
     #nossos-servicos > div {
         display: grid;
         grid-template: 1fr 1fr / 1fr;
     }
 
-            /* CONTATO */
+    /* CONTATO */
             
     #contato {
         /* display: ; */
@@ -563,7 +629,7 @@ footer img {
 
      
     
-            /* FOOTER */
+    /* FOOTER */
 
     footer {
         grid-template: 1fr 1fr 50px / 1fr;
@@ -606,24 +672,77 @@ footer img {
 
 
     
-            /* HEADER */
+    /* HEADER */
 
-    header ul {
-        display: none;
-    }
-
-    header > nav {
+            
+    #navMenu {
         justify-items: flex-end;
         padding-right: 5%;
     }
+    
+    #navMenu.active #menu {
+        height: calc(100vh - 80px);
+        overflow-y: auto;
+        visibility: visible;
+    }
 
+    #menu {
+        background-color: #c23a49;
+        display: grid;
+        grid-template: repeat(4, 5rem) / 1fr;
+        height: 0px;
+        overflow-y: hidden;
+        position: absolute;
+        right: 0px;
+        top: 80px;
+        transition: .5s;
+        visibility: hidden;
+        width: 100%;
+        z-index: 100;
+    }
+    
+    #menu li {
+        align-items: center;
+        border-bottom: 2px solid #cd969e;
+        display: grid;
+        height: 100%;
+        text-align: left;
+        width: 100%;
+    }
+
+    #menu a {
+        padding: 1.4rem;
+        text-align: center;
+    }
+        
     #btn-mobile {
+        align-items: center;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        font-size: 1.2rem;
+        font-weight: bold;
+        transition: 1s;
+        width: 40px;
+    }
+
+    #navMenu.active #menuFechar {
         display: block;
+    }
+
+    #navMenu.active #menuHamburger {
+        display: none;
+    }
+
+    #menuFechar {
+        display: none;
     }
 
 
     
-            /* RASTREAMENTO */
+    /* RASTREAMENTO */
     
     #rastreamento {
         background-image: url('assets/rastreamento-sem-fundo.png');
@@ -658,7 +777,9 @@ footer img {
         display: none;
     }
     
-            /* QUEM SOMOS */
+
+
+    /* QUEM SOMOS */
 
     #quem-somos {
         background-image: url('assets/quem-somos.jpg');
@@ -692,7 +813,7 @@ footer img {
 
 
 
-            /* NOSSOS SERVIÇOS */
+    /* NOSSOS SERVIÇOS */
 
     #nossos-servicos > div {
         display: grid;
@@ -718,7 +839,7 @@ footer img {
 
      
     
-            /* FOOTER */
+    /* FOOTER */
 
     footer {
         grid-template: 1fr 1fr 50px / 1fr;

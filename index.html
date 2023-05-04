@@ -9,18 +9,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
     <title>Log4 | A confiança que você espera, na velocidade que você precisa!</title>
 </head>
 
 <body>
 
     <header>
-        <figure>
+        <figure id="logoMenu">
             <a href="/"><img src="assets/logo-sem-slogan-sem-fundo.png" alt="Imagem não encontrada"></a>
         </figure>
-        <nav>
-            <button id="btn-mobile">Menu</button>
-            <ul>
+        <nav id="navMenu">
+            <button id="btn-mobile">
+                <img id="menuHamburger" src="assets/menu-hamburger.png" alt="menu-hamburger">
+                <img id="menuFechar" src="assets/menu-fechar.png" alt="menu-fechar">
+            </button>
+            <ul id="menu">
                 <li><a href="#rastreamento">Rastreamento</a></li>
                 <li><a href="#quem-somos">Quem Somos</a></li>
                 <li><a href="#nossos-servicos">Nossos serviços</a></li>
@@ -112,7 +116,7 @@
                         <label for="mensagem">Mensagem:</label>
                     </div>
                     <div id="botaoFormulario">
-                        <input type="submit" value="Enviar">
+                        <input onclick="enviarFormulario(event)" type="submit" value="Enviar">
                     </div>
                 </fieldset>
             </form>
@@ -136,7 +140,7 @@
                 <a href="https://www.instagram.com/" target="_blank"><img src="assets/instagram.png" alt="Image not found"></a>
             </figure>
             <figure id="facebook">
-                <a href="https://www.linkedin.com/in/wylchayer-cruz/" target="_blank"><img src="assets/facebook.png" alt="Image not found"></a>
+                <a href="https://www.facebook.com/" target="_blank"><img src="assets/facebook.png" alt="Image not found"></a>
             </figure>
         </section>
     </footer>
