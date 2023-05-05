@@ -130,3 +130,16 @@ A sua Landing Page deve conter:
 4.  Abra um novo Pull Request (PR) com a frase **PR para correção**. Caso não saiba como fazê-lo, assista a esse [vídeo](https://www.canva.com/design/DAFY4nS5W2c/t92uFMR61YtmA7bCwj2S1Q/watch).
 5.  Envie o link do seu PR e do surge no [formulário de entrega](https://forms.gle/nrh5KpDhAMwXBjC29).
 
+link surge: rabid-cover.surge.sh
+
+![desktop-1](./prints-landing-page/desktop-1.png)
+![desktop-2](./prints-landing-page/desktop-2.png)
+![desktop-3](./prints-landing-page/desktop-3.png)
+![desktop-4](./prints-landing-page/desktop-4.png)
+![desktop-5](./prints-landing-page/desktop-5.png)
+![mobile-1](./prints-landing-page/mobile-1.png)
+![mobile-2](./prints-landing-page/mobile-2.png)
+![mobile-3](./prints-landing-page/mobile-3.png)
+![mobile-4](./prints-landing-page/mobile-4.png)
+![mobile-5](./prints-landing-page/mobile-5.png)
+![mobile-6](./prints-landing-page/mobile-6.png)
