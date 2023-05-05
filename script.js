@@ -9,6 +9,22 @@ const toggleMenu = (event) => {
     nav.classList.toggle('active')
 }
 
+const desktopActive = () => {
+    const body = document.querySelector('body')
+    body.classList.toggle('desktop')
+}
+
+const checkDevice = () => {
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        return true
+    } else {
+        desktopActive()
+        return false
+    }
+}
+
+const device = checkDevice()
+
 btnMobile.addEventListener('click', toggleMenu)
 btnMobile.addEventListener('touchstart', toggleMenu)
 menu.addEventListener('click', toggleMenu)
@@ -42,6 +58,39 @@ const enviarFormulario = (event) => {
         userMensagem.value = ''
     }
 }
-
 const btnFormulario = document.querySelector('#botaoFormulario input')
 
+
+// Distância scroll das sections
+const galeraMenu = document.querySelectorAll('#menu a')
+
+const scrollTop = (event) => {
+    event.preventDefault()
+    const href = event.target.getAttribute('href')
+    const distanciaDoTopo = document.querySelector(href).offsetTop;
+    const alturaHeader = +window.getComputedStyle(document.querySelector('header')).height.replace('px','')
+    console.log(alturaHeader);
+
+    window.scrollTo({
+        top: distanciaDoTopo - alturaHeader
+    })
+}
+
+galeraMenu.forEach(element => {
+    element.addEventListener('click', scrollTop)
+});
+
+
+// voltar para home
+
+const vaiPraHome = () => {
+    window.scrollTo({
+        top: 0
+    })
+}
+
+const logoHome = document.querySelectorAll('.logoMenu')
+
+logoHome.forEach(element => {
+    element.addEventListener('click', vaiPraHome)
+})
