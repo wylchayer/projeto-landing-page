@@ -1,6 +1,6 @@
 /* 
 Paleta de cores:
-white
+#f6f7f9 (white)
 #cd969e
 #cc5f6c
 #c23a49
@@ -9,30 +9,7 @@ white
 
 /* 
 DÚVIDAS: 
-- diminuir header após abaixar a página (ao clicar em um item do header, o título fica por baixo do header fixo)
-- Zoom na página bagunça tudo
-- Scroll suave no js
-- transição das imagens do ícone do menu
-- menu com touch continua com hover após clicar
-*/
-
-/*
-DIMENSÕES:
-*** 320px — 480px: dispositivos móveis
-*** 481px — 768px: iPads, tablets
-*** 769px — 1024px: telas pequenas, laptops
-1025px — 1200px: desktops, telas grandes
-1201px e acima —  telas muito grandes, TVs
-*/
-
-/*
-NOMEAÇÃO COMEÇOU AQUI
-AQUI
-AQUI
-AQUI
-AQUI
-AQUI
-AQUI
+****- transição das imagens do ícone do menu
 */
 
 * {
@@ -40,7 +17,11 @@ AQUI
     margin: 0;
     padding: 0;
     font-family: 'Kanit', sans-serif;
-    letter-spacing: 1.5px;
+    letter-spacing: .1rem;
+}
+
+html {
+    scroll-behavior: smooth
 }
 
 .titulo {
@@ -48,15 +29,7 @@ AQUI
 }
 
 body {
-    background-image: linear-gradient(to right, #c23a49, #cd969e, #c23a49);
-}
-
-main {
-    padding: 0 3%;
-}
-
-main > section {
-    margin: 30px 0;
+    background-color: #f6f7f9;
 }
 
 
@@ -65,13 +38,12 @@ main > section {
 
 header {
     align-items: center;
-    background-image: linear-gradient(to right, #c23a49, #cd969e, #c23a49);
+    background: #cc5f6c;
     display: flex;
     font-size: 1.3rem;
     font-weight: bold;
-    height: 80px;
+    height: 4rem;
     position: sticky;
-    text-shadow: 0 0 10px #c23a49;
     top: 0;
     z-index: 1;
 }
@@ -79,29 +51,31 @@ header {
 header a {
     color: white;
     text-decoration: none;
-    transition: all 0.2s;
+    transition: 0.2s;
 }
 
-#logoMenu {
+.logoMenu {
     align-items: center;
-    border-radius: 5px;
     display: flex;
     height: 100%;
     justify-content: center;
     margin-left: 3%;
-    width: 100px;
+    width: 6rem;
 }
 
-#logoMenu > a {
+.logoMenu > a {
     align-items: center;
     display: flex;
     width: 70%;
 }
 
-header img {
-    width: 100%;
+.logoMenu img {
+    width: 60%;
 }
 
+#logoTelaPequena {
+    display: none;
+}
 
 #navMenu {
     align-items: center;
@@ -113,6 +87,10 @@ header img {
 
 #btn-mobile {
     display: none;
+}
+
+#btn-mobile img {
+    width: 80%;
 }
 
 #menu {
@@ -128,7 +106,7 @@ header img {
     text-align: center;
 }
 
-#navMenu a:hover {
+.desktop #navMenu a:hover {
     color: #c23a49;
     text-shadow: 0 0 10px white;
     font-size: 1.5rem;
@@ -140,48 +118,47 @@ header img {
 /* RASTREAMENTO */
 
 #rastreamento {
-    color: white;
+    color: #cc5f6c;
     display: grid;
     grid-template: 1fr / 50% 50%;
-    text-shadow: 0 0 10px #c23a49;
+    margin: 1rem 0;
+    padding: 0 3%;
+    text-shadow: 0 0 1px #c23a49;
 }
 
 #rastreamento > article {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    align-items: center;
+    display: grid;
+    grid-template: repeat(3, 1fr) / 1fr;
+    justify-items: center;
 }
 
 #rastreamento > article > h2 {
-    align-self: flex-end;
+    justify-self: end;
 }
 
 #rastreamento > article > p {
-    padding-bottom: 3%;
     font-size: 1.5rem;
-}
-
-#rastreamento > article > a {
-    align-self: center;
+    justify-self: start;
 }
 
 #rastreamento > article button {
-    background-color: white;
+    background-color: #c23a49;
     border: none;
-    border-radius: 50px;
-    color: #c23a49;
+    border-radius: 3rem;
+    color: white;
     font-size: 1.5rem;
     font-weight: bold;
-    height: 60px;
-    transition: all 0.5s;
-    width: 120px;
+    padding: .7rem 1rem;
+    transition: 0.2s;
 }
 
 #rastreamento > article button:hover {
-    background-color: #cc5f6c;
-    border: 1px solid white;
-    color: white;
+    background-color: #f6f7f9;
+    border: 3px solid #c23a49;
+    color: #c23a49;
     cursor: pointer;
+    text-shadow: 0 0 1px #c23a49;
 }
 
 #rastreamento > figure {
@@ -199,11 +176,13 @@ header img {
 /* QUEM SOMOS */
 
 #quem-somos {
+    background-color: #cc5f6c;
     color: white;
     display: grid;
-    font-weight: bold;
     grid-template-columns: 1fr 1fr;
-    text-shadow: 0 0 10px #c23a49;
+    margin: 1rem 0;
+    padding: 1rem 3%;
+    text-shadow: 0 0 1px #c23a49;
 }
 
 #quem-somos > figure {
@@ -213,23 +192,23 @@ header img {
 }
 
 #quem-somos > figure > img {
-    border-radius: 20px;
+    border-radius: 1rem;
     height: 85%;
     max-width: 80%;
 }
 
 #quem-somos > article {
-    display: flex;
-    flex-direction: column;
+    align-items: center;
+    display: grid;
+    justify-items: center;
     height: 100%;
-    justify-content: center;
 }
 
 #quem-somos > article > h2 {
     align-items: center;
     display: flex;
-    flex-grow: 1;
     justify-content: center;
+    padding: 1rem 0;
     padding-right: 10%;
 }
 
@@ -249,7 +228,8 @@ header img {
     display: flex;
     flex-grow: 1;
     justify-content: center;
-    margin-top: 30px;
+    padding: 2rem 0;
+    width: 100%;
 }
 
 #slogan > img {
@@ -268,10 +248,12 @@ header img {
 /* NOSSOS SERVIÇOS */
 
 #nossos-servicos {
-    color: white;
+    color: #cc5f6c;
     display: grid;
-    gap: 20px;
-    text-shadow: 0 0 10px #c23a49;
+    gap: 1rem;
+    margin: 1rem 0;
+    padding: 0 3%;
+    text-shadow: 0 0 1px #c23a49;
 }
 
 #nossos-servicos > h2 {
@@ -292,14 +274,14 @@ header img {
 
 #entregas-ageis > p {
     font-size: 1.3rem;
-    padding-right: 10px;
+    padding-right: .5rem;
     text-align: justify;
 }
 
 .imagens-nossos-serviços {
-    border-radius: 20px;
+    border-radius: 1rem;
     width: 100%;
-    padding: 0 10px;
+    padding: 0 .5rem;
 }
 
 #entregas-com-cuidado {
@@ -311,7 +293,7 @@ header img {
 
 #entregas-com-cuidado > p {
     font-size: 1.3rem;
-    padding-left: 10px;
+    padding-left: .5rem;
     text-align: justify;
 }
 
@@ -320,9 +302,10 @@ header img {
 /* CONTATO */
 
 #contato {
+    background-color: #cc5f6c;
     color: white;
     padding: 0 5%;
-    text-shadow: 0 0 10px #c23a49;
+    padding-bottom: 1rem;
 }
 
 #contato > h2 {
@@ -331,7 +314,7 @@ header img {
 
 #contato > p {
     font-size: 1.5rem;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
     text-align: center;
 }
 
@@ -344,7 +327,7 @@ header img {
     border: 3px solid #c23a49;
     border-radius: 10px;
     padding: 1%;
-    width: 500px;
+    width: 30rem;
 }
 
 #contato > form legend {
@@ -357,7 +340,7 @@ header img {
 }
 
 .formLabelInput {
-    margin: 30px 0;
+    margin: 2rem 0;
     position: relative;
 }
 
@@ -390,26 +373,26 @@ header img {
 
 .formLabelInput textarea {
     border: 2px solid white;
-    border-radius: 5px;
+    border-radius: .5rem;
     resize: none;
 }
 
 #botaoFormulario {
     display: grid;
     justify-items: center;
-    margin-top: -10px;
-    margin-bottom: 10px;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
 }
 
 form input[type=submit] {
     background-color: white;
     border: none;
     color: #c23a49;
-    border-radius: 20px;
+    border-radius: 2rem;
     font-size: 1.1rem;
     font-weight: bold;
-    padding: 10px 30px;
-    transition: all 0.5s;
+    padding: .7rem 2rem;
+    transition: 0.2s;
 }
 
 form input[type=submit]:hover {
@@ -450,31 +433,47 @@ footer img {
     width: 40px;
 }
 
+
+
+
 @media screen and (max-width: 480px) {
     .titulo {
         font-size: 2rem;
     }
     
-    main {
-        padding: 0 3%;
-    }
-
-    main > section {
-        margin: 20px 0;
-    }
 
 
-    
     /* HEADER */
 
-            
+    #logoTelaGrande {
+        display: none;
+    }
+
+    #logoTelaPequena {
+        display: flex;
+    }
+
+    .logoMenu {
+        width: 30%;
+    }
+
+    .logoMenu > a {
+        justify-content: center;
+        height: 100%;
+    }
+
+    .logoMenu img {
+        height: 80%;
+        width: initial;
+    }
+
     #navMenu {
         justify-items: flex-end;
         padding-right: 5%;
     }
     
     #navMenu.active #menu {
-        height: calc(100vh - 80px);
+        height: calc(100vh - 4rem);
         overflow-y: auto;
         visibility: visible;
     }
@@ -487,7 +486,7 @@ footer img {
         overflow-y: hidden;
         position: absolute;
         right: 0px;
-        top: 80px;
+        top: 4rem;
         transition: .5s;
         visibility: hidden;
         width: 100%;
@@ -538,9 +537,10 @@ footer img {
     /* RASTREAMENTO */
     
     #rastreamento {
-        background-image: url('assets/rastreamento-sem-fundo.png');
+        background-image: url('assets/rastreamento-sem-fundo-opaco.png');
         background-position: center;
         background-size: cover;
+        color: #c23a49;
         display: grid;
         grid-template: 1fr / 1fr;
         height: 40vh;
@@ -551,34 +551,37 @@ footer img {
     }
 
     #rastreamento > article > h2 {
-        align-self: initial;
+        justify-self: center;
     }
 
     #rastreamento > article > p {
-        /* align-self: flex-start; */
-        font-size: initial;
+        font-size: 1.1rem;
+        justify-self: center;
+        text-align: center;
         width: 50%;
+        text-shadow: 0 0 1px #c23a49;
     }
 
     #rastreamento > article button {
-        font-size: initial;
-        height: 40px;
-        width: 80px;
+        font-size: 1.2rem;
     }
     
     #rastreamento > figure {
         display: none;
     }
+
+
     
     /* QUEM SOMOS */
 
     #quem-somos {
-        background-image: url('assets/quem-somos.jpg');
+        background-image: url('assets/quem-somos-opaco.png');
         background-size: cover;
+        color: #c23a49;
         display: grid;
         grid-template: 1fr / 1fr;
         font-weight: initial;
-        padding: 3% 2%;
+        text-shadow: 0 0 1px #c23a49;
     }
 
     #quem-somos > figure {
@@ -606,16 +609,26 @@ footer img {
 
     /* NOSSOS SERVIÇOS */
 
+    #nossos-servicos {
+        color: #c23a49;
+    }
+
     #nossos-servicos > div {
         display: grid;
         grid-template: 1fr 1fr / 1fr;
     }
 
-    /* CONTATO */
-            
-    #contato {
-        /* display: ; */
+    #entregas-ageis > p {
+        font-size: 1.2rem;
     }
+
+    #entregas-com-cuidado > p {
+        font-size: 1.2rem;
+    }
+
+
+
+    /* CONTATO */
 
     #contato > p {
         font-size: initial;
@@ -625,8 +638,8 @@ footer img {
         border: 3px solid #c23a49;
         padding: 0 10px;
         width: 100%;
+        max-width: 500px;
     }
-
      
     
     /* FOOTER */
@@ -657,32 +670,46 @@ footer img {
     }
 }
 
+
+
 @media screen and (min-width: 481px) and (max-width: 768px) {
     .titulo {
         font-size: 2rem;
     }
     
-    main {
-        padding: 0 3%;
-    }
-
-    main > section {
-        margin: 20px 0;
-    }
-
 
     
     /* HEADER */
 
-            
+    #logoTelaGrande {
+        display: none;
+    }
+
+    #logoTelaPequena {
+        display: flex;
+    }
+
+    .logoMenu {
+        width: 30%;
+    }
+
+    .logoMenu > a {
+        justify-content: center;
+        height: 100%;
+    }
+
+    .logoMenu img {
+        height: 80%;
+        width: initial;
+    }
+
     #navMenu {
         justify-items: flex-end;
         padding-right: 5%;
     }
     
     #navMenu.active #menu {
-        height: calc(100vh - 80px);
-        overflow-y: auto;
+        height: calc(100vh - 4rem);
         visibility: visible;
     }
 
@@ -694,7 +721,7 @@ footer img {
         overflow-y: hidden;
         position: absolute;
         right: 0px;
-        top: 80px;
+        top: 4rem;
         transition: .5s;
         visibility: hidden;
         width: 100%;
@@ -745,9 +772,10 @@ footer img {
     /* RASTREAMENTO */
     
     #rastreamento {
-        background-image: url('assets/rastreamento-sem-fundo.png');
+        background-image: url('assets/rastreamento-sem-fundo-opaco.png');
         background-position: center;
         background-size: cover;
+        color: #c23a49;
         display: grid;
         grid-template: 1fr / 1fr;
         height: 40vh;
@@ -758,19 +786,19 @@ footer img {
     }
 
     #rastreamento > article > h2 {
-        align-self: initial;
+        justify-self: center;
     }
 
     #rastreamento > article > p {
-        font-size: initial;
+        font-size: 1.1rem;
+        justify-self: center;
         text-align: center;
         width: 50%;
+        text-shadow: 0 0 1px #c23a49;
     }
 
     #rastreamento > article button {
-        font-size: initial;
-        height: 40px;
-        width: 80px;
+        font-size: 1.2rem;
     }
     
     #rastreamento > figure {
@@ -782,12 +810,13 @@ footer img {
     /* QUEM SOMOS */
 
     #quem-somos {
-        background-image: url('assets/quem-somos.jpg');
+        background-image: url('assets/quem-somos-opaco.png');
         background-size: cover;
+        color: #c23a49;
         display: grid;
         grid-template: 1fr / 1fr;
         font-weight: initial;
-        padding: 3% 2%;
+        text-shadow: 0 0 1px #c23a49;
     }
 
     #quem-somos > figure {
@@ -815,16 +844,26 @@ footer img {
 
     /* NOSSOS SERVIÇOS */
 
+    #nossos-servicos {
+        color: #c23a49;
+    }
+
     #nossos-servicos > div {
         display: grid;
         grid-template: 1fr 1fr / 1fr;
     }
 
-            /* CONTATO */
-            
-    #contato {
-        /* display: ; */
+    #entregas-ageis > p {
+        font-size: 1.2rem;
     }
+
+    #entregas-com-cuidado > p {
+        font-size: 1.2rem;
+    }
+
+
+
+    /* CONTATO */
 
     #contato > p {
         font-size: initial;
@@ -868,7 +907,6 @@ footer img {
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-
 
     #rastreamento > article > p {
         font-size: 1.3rem;
